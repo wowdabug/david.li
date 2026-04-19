@@ -17425,8 +17425,6 @@
 				: Promise.reject("Invalid recording ID");
 			}),
             (e.prototype.saveRecording = function (t) {
-			  console.error("saveRecording disabled");
-			  /*
               var n = Bt.RecordingMessage.encode(t).finish();
               return fetch(e.ROUTE, { method: "PUT", body: n })
                 .then(function (e) {
@@ -17436,7 +17434,6 @@
                 .then(function (e) {
                   return { id: e.id };
                 });
-			  */
             }),
             (e.ROUTE = "recording"),
             e
