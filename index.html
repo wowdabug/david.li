@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>david.li</title>
+
+        <style>
+            * {
+                font-family: Helvetica, Arial, sans-serif;
+                color: #555555;
+            }
+
+            body {
+                padding: 40px 20px 20px 50px;
+            }
+
+            #name {
+                font-weight: bold;
+                font-size: 20px;
+
+                margin-left: 10px;
+            }
+
+            #dot {
+                color: rgb(191,48,48);
+                font-size: 26px;
+            }
+
+            #projects {
+                margin-top: 40px;
+            }
+
+            .project {
+                float: left;
+                margin: 0 10px 20px 10px;
+            }
+
+            .project img {
+                width: 400px;
+                height: 225px;
+            }
+
+            .title {
+                margin-top: 5px;
+                font-size: 12px;
+            }
+
+            .title a {
+                text-decoration: none;
+            }
+
+            #contact {
+                margin-left: 10px;
+                margin-top: 20px;
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            #contact a {
+                font-weight: normal;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="name"><span id="dot">.</span>li</div>
+
+        <div id="projects">
+            <div class="project">
+                <div><!--<a href="https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp=e30.">--><img src="violathebird.png"/></a></div>
+                <div class="title"><!--<a href="https://artsandculture.google.com/experiment/viola-the-bird/nAEJVwNkp-FnrQ?cp=e30.">-->Viola the Bird</a></div>
+            </div>
+
+            <div class="project">
+                <div><!--<a href="https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?cp=e30.">--><img src="blobopera.png"/></a></div>
+                <div class="title"><!--<a href="https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?cp=e30.">-->Blob Opera</a></div>
+            </div>
+
+            <div class="project">
+                <div><!--<a href="http://www.adultswim.com/etcetera/choir/">--><img src="choir.png"/></a></div>
+                <div class="title"><!--<a href="http://www.adultswim.com/etcetera/choir/">-->[adult swim] Choir</a></div>
+            </div>
+
+            <div class="project">
+                <div><!--<a href="http://www.adultswim.com/etcetera/elastic-man/">--><img src="elasticman.png"/></a></div>
+                <div class="title"><!--<a href="http://www.adultswim.com/etcetera/elastic-man/">-->[adult swim] Elastic Man</a></div>
+            </div>
+
+            <div class="project">
+                <div><a href="paint/"><img src="paint.png"/></a></div>
+                <div class='title'><a href="paint/">Fluid Paint</a></div>
+            </div>
+
+            <div class="project">
+                <div><!--<a href="http://www.adultswim.com/etcetera/soup/"><img src="soup.png"/>--></a></div>
+                <div class='title'><!--<a href="http://www.adultswim.com/etcetera/soup/">[adult swim] Character Soup</a>--></div>
+            </div>
+
+            <div class="project">
+                <div><a href="fluid/"><img src="fluid.png"/></a></div>
+                <div class='title'><a href="fluid/">Fluid Particles</a></div>
+            </div>
+
+            <div class="project">
+                <div><a href="vortexspheres/"><img src="vortexspheres.png"/></a></div>
+                <div class='title'><a href="vortexspheres/">Vortex Spheres</a></div>
+            </div>
+
+            <div class="project">
+                <div><a href="flow/"><img src="flow.png"/></a></div>
+                <div class='title'><a href="flow/">Volumetric Particle Flow</a></div>
+            </div>
+
+            <div class="project">
+                <div><a href="filtering/"><img src="filtering.png"/></a></div>
+                <div class='title'><a href="filtering/">Fourier Image Filtering</a></div>
+            </div>
+
+            <div class="project">
+                <div><a href="waves/"><img src="waves.png"/></a></div>
+                <div class='title'><a href="waves/">Ocean Wave Simulation</a></div>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+
+        <div id="contact">
+            Say hi: <a href="mailto:hi@david.li">hi@david.li</a> | Twitter: <a href="http://twitter.com/daviddotli">@daviddotli</a> | GitHub: <a href="http://github.com/dli">@dli</a> | YouTube: <a href="http://youtube.com/daviddotli">daviddotli</a>
+        </div>
+
+        <script>
+            function hsvToRGB (h, s, v) {
+                h = h % 1;
+
+                var c = v * s,
+                    hDash = h * 6;
+
+                var x = c * (1 - Math.abs(hDash % 2 - 1));
+
+                var mod = Math.floor(hDash);
+
+                var r = [c, x, 0, 0, x, c][mod],
+                    g = [x, c, c, x, 0, 0][mod],
+                    b = [0, 0, x, c, c, x][mod];
+
+                var m = v - c;
+
+                r += m;
+                g += m;
+                b += m;
+
+                return [r, g, b];
+            }
+
+            function rgbToString (color) {
+                return 'rgb(' + (color[0] * 255).toFixed(0) + ',' + (color[1] * 255).toFixed(0) + ',' + (color[2] * 255).toFixed(0) + ')';
+            }
+
+            document.getElementById('dot').style.color = rgbToString(hsvToRGB(Math.random(), 0.75, 1));
+        </script>
+    </body>
+</html>
